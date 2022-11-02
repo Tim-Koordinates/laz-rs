@@ -14,6 +14,10 @@ impl DecompressionSelector {
         Self { 0: 0xFFFF_FFFF }
     }
 
+    pub fn decompress(flags: u32) -> Self {
+        Self { 0: flags }
+    } 
+
     pub fn channel_returns_xy_requested(&self) -> bool {
         self.is_set(0x0000_0000)
     }
